@@ -1,3 +1,25 @@
+{% render 'partials/head.liquid' %}
+
+
+
+{% comment %} <p class="title-small">VRIENDEN</p>
+<h2>Maandranking - april</h2> {% endcomment %}
+
+
+
+{% comment %} LAAGSTE HCP {% endcomment %}
+<section class="component">
+    <ul class="golfer-rankings">
+<li><input type="checkbox" id="grootste-daler">
+<label for="grootste-daler">Grootste daler</label></li>
+
+<li><input type="checkbox" id="Meeste-rondes">
+<label for="Meeste-rondes">Meeste rondes</label></li>
+
+<li><input type="checkbox" id="Laagste-hcp">
+<label for="Laagste-hcp">Laagste hcp</label></li>
+    </ul>
+
 <ol class="golfer-ranking">
 {% for golfer in golfers limit:5 %}
 
@@ -33,3 +55,4 @@
     </section>
 
 </section>
+{% render 'partials/foot.liquid' %}

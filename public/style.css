@@ -1,0 +1,112 @@
+:root {
+
+    --color-1: black;
+    --color-2: white;
+    --color-3: grey;
+    --color-4: blue;
+
+
+    --title-small: font-size: 1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background: var(--color-3);
+    height: 300vh;
+    width: 100vw;
+    padding-top: 5em;
+}
+
+header {
+    padding: 2em;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: sticky;
+}
+
+section.heading {
+    padding: 1em 0 1em 1em;
+}
+
+section.component {
+    margin: 0 1em 0 1em;
+    padding: 1em;
+    border-radius: 1em;
+    background: var(--color-2);
+}
+
+p.title-small {
+    font-size: var(--title-small);
+}
+
+ol.golfer-ranking {
+/* padding-left: 1em; */
+
+li {
+    padding: 0.5em 1em 0.5em 1em;
+    border-bottom: 0.1em solid;
+    display: flex;
+    justify-content: space-between;
+}
+}
+
+ul.golfer-rankings {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0 1em 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+section.pntn-teller {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+
+    .btn {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid var(--color-3);
+        background: var(--color-2);
+        cursor: pointer;
+    }
+}
+
+
+li.handicap[type=checkbox]:checked {
+    display: block;
+}
+
+li.handicap[type=checkbox]:not(:checked) {
+    display: none;
+}
+
+li.verschil[type=checkbox]:checked {
+    display: block;
+}
+
+li.verschil[type=checkbox]:not(:checked) {
+    display: none;
+}
+
+li.meeste-rondes[type=checkbox]:checked {
+    display: block;
+}
+
+li.meeste-rondes[type=checkbox]:not(:checked) {
+    display: none;
+}
+
+
+
+
+

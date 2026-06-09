@@ -29,6 +29,10 @@ header {
     position: sticky;
 }
 
+h1 {
+    font-size: 1.5em;
+}
+
 section.heading {
     padding: 1em 0 1em 1em;
 }

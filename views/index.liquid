@@ -1,3 +1,24 @@
+<ol class="golfer-ranking">
+{% for golfer in golfers limit:5 %}
+
+{% assign golfer_rondes = rondes | where: "golfer_id", golfer.id %}
+{% assign hoogste_ronde = golfer_rondes | last %}
+
+
+    <li>
+    <section>
+        <h4>{{ golfer.name }}</h4>
+        <p>WHS</p> 
+        {% comment %}^ dit moet dynamisch zijn op een manier? {% endcomment %}
+    </section>
+    <section>
+        <p class="handicap">{{ golfer.handicap }}</p>
+        <p class="verschil">{{ golfer.improvement }}</p>
+        {% comment %} <p>{{ rondes.golfer_id }}</p> {% endcomment %}
+        <p class="meeste-rondes">{{ hoogste_ronde.golfer_id }}</p>
+    </section>
+    </li>
+{% endfor %}
 <section class="heading">
 <p class="title-small">DOEL</p>
 <h2>Naar je volgende handicap</h2>

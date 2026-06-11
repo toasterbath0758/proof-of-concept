@@ -31,13 +31,9 @@
     <section>
         <h4>{{ golfer.name }}</h4>
         <p>WHS</p> 
-        {% comment %}^ dit moet dynamisch zijn op een manier? {% endcomment %}
     </section>
     <section>
-        <p class="handicap">{{ golfer.handicap }}</p>
-        <p class="verschil">{{ golfer.improvement }}</p>
-        {% comment %} <p>{{ rondes.golfer_id }}</p> {% endcomment %}
-        <p class="meeste-rondes">{{ hoogste_ronde.golfer_id }}</p>
+        <p class="verschil">{{ golfer.improvement | round: 1 }}</p>
     </section>
     </li>
 {% endfor %}
@@ -45,6 +41,34 @@
 </ol>
 </section>
 
+<section class="component" id="Laagste-hcp">
+<ul class="golfer-ranking">
+<li><a href="#Grootste-daler">Grootste daler</a>
+
+<li><a href="#Meeste-rondes">Meeste rondes</a>
+
+<li><a href="#Laagste-hcp" class="active">Laagste hcp</a>
+</ul>
+
+<ol class="golfer-ranking">
+{% for golfer in golfers limit:5 %}
+
+{% assign golfer_rondes = rondes | where: "golfer_id", golfer.id %}
+{% assign ronde = golfer_rondes | last %}
+
+    <li>
+    <section>
+        <h4>{{ golfer.name }}</h4>
+        <p>{{ ronde.type }}</p> 
+    </section>
+    <section>
+        <p class="meeste-rondes">{{ ronde.differential | round: 1 }}</p>
+    </section>
+    </li>
+{% endfor %}
+
+</ol>
+</section>
 
 <section class="heading">
 <p class="title-small">DOEL</p>

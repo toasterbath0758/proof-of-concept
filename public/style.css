@@ -87,7 +87,7 @@ ul.golfer-ranking {
     }
 }
 
-section.pntn-teller {
+/* section.pntn-teller {
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -101,9 +101,7 @@ section.pntn-teller {
         background: var(--color-2);
         cursor: pointer;
     }
-}
-
-
+} */
 
 
 

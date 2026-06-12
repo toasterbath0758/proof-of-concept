@@ -8,10 +8,15 @@
 
 
 {% comment %} LAAGSTE HCP {% endcomment %}
-<section class="component">
-    <ul class="golfer-rankings">
-<li><input type="checkbox" id="grootste-daler">
-<label for="grootste-daler">Grootste daler</label></li>
+<section class="component" id="Grootste-daler">
+
+<ul class="golfer-ranking">
+<li><a href="#Grootste-daler" class="active">Grootste daler</a>
+
+<li><a href="#Meeste-rondes">Meeste rondes</a>
+
+<li><a href="#Laagste-hcp">Laagste hcp</a>
+</ul>
 
 <li><input type="checkbox" id="Meeste-rondes">
 <label for="Meeste-rondes">Meeste rondes</label></li>
@@ -23,9 +28,33 @@
 <ol class="golfer-ranking">
 {% for golfer in golfers limit:5 %}
 
-{% assign golfer_rondes = rondes | where: "golfer_id", golfer.id %}
-{% assign hoogste_ronde = golfer_rondes | last %}
+    <li>
+    <section>
+        <h4>{{ golfer.name }}</h4>
+        <p>WHS</p> 
 
+    </section>
+    <section>
+        <p class="handicap">{{ golfer.improvement | round: 1 }}</p>
+    </section>
+    </li>
+{% endfor %}
+
+</ol>
+</section>
+
+<section class="component" id="Meeste-rondes">
+<ul class="golfer-ranking">
+<li><a href="#Grootste-daler">Grootste daler</a>
+
+<li><a href="#Meeste-rondes" class="active">Meeste rondes</a>
+
+<li><a href="#Laagste-hcp">Laagste hcp</a>
+</ul>
+
+
+<ol class="golfer-ranking">
+{% for golfer in golfers limit:5 %}
 
     <li>
     <section>
@@ -33,7 +62,7 @@
         <p>WHS</p> 
     </section>
     <section>
-        <p class="verschil">{{ golfer.improvement | round: 1 }}</p>
+        <p class="verschil">{{ golfer.handicap | round: 1 }}</p>
     </section>
     </li>
 {% endfor %}

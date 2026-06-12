@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: system-ui, sans-serif;
+    font-family: system-ui, sans-serif;
 }
 
 main {
@@ -25,6 +25,9 @@ main {
     height: 300vh;
     width: 100vw;
     padding-top: 5em;
+
+    display: grid;
+    justify-content: center;
 }
 
 header {
@@ -51,15 +54,27 @@ section.component {
     background: var(--color-2);
     box-shadow: 0px -1px 5px grey;
 
-    a {
-        text-decoration: none;
-        font-weight: bold;
-        color: var(--color-1);
+    @media (min-width: 375px) {
+        width: 300px;
     }
 
-    a.active {
-        text-decoration: underline;
+    @media (min-width: 600px) {
+        width: 500px;
     }
+
+    @media (min-width: 800px) {
+        width: 700px;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-1);
+}
+
+a.active {
+    text-decoration: underline;
 }
 
 p.title-small {
@@ -67,14 +82,14 @@ p.title-small {
 }
 
 ol.golfer-ranking {
-/* padding-left: 1em; */
+    /* padding-left: 1em; */
 
-li {
-    padding: 0.5em 1em 0.5em 1em;
-    border-bottom: 0.1em solid;
-    display: flex;
-    justify-content: space-between;
-}
+    li {
+        padding: 0.5em 1em 0.5em 1em;
+        border-bottom: 0.1em solid;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 ul.golfer-ranking {
@@ -102,7 +117,3 @@ ul.golfer-ranking {
         cursor: pointer;
     }
 } */
-
-
-
-

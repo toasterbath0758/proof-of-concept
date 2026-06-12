@@ -22,7 +22,6 @@ body {
 
 main {
     background: var(--color-3);
-    height: 300vh;
     width: 100vw;
     padding-top: 5em;
 
@@ -44,6 +43,7 @@ h1 {
 
 section.heading {
     padding: 1em 0 1em 1em;
+    height: fit-content;
 }
 
 section.component {

@@ -67,13 +67,30 @@ section.component {
     }
 }
 
+.maand-rankings {
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+section:target {
+    display: block;
+    z-index: 0;
+
+}
+
+
+section.maandranking-wrapper {
+    padding-bottom: 30em;
+}
+
 a {
     text-decoration: none;
     font-weight: bold;
     color: var(--color-1);
 }
 
-a.active {
+a.selected {
     text-decoration: underline;
 }
 
@@ -101,6 +118,14 @@ ul.golfer-ranking {
         list-style: none;
     }
 }
+
+/* .invis-tab {
+    display: none;
+} */
+
+
+
+
 
 /* section.pntn-teller {
     display: flex;

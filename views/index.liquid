@@ -1,112 +1,142 @@
 {% render 'partials/head.liquid' %}
 
+{% comment %}
+  <p class="title-small">VRIENDEN</p>
+  <h2>Maandranking - april</h2>
+{% endcomment %}
 
+<section class="maandranking-wrapper">
+  <section class="heading">
+    <p class="title-small">vrienden</p>
+    <h2>Maand-rankings</h2>
+  </section>
 
-{% comment %} <p class="title-small">VRIENDEN</p>
-<h2>Maandranking - april</h2> {% endcomment %}
+  <section class="component maand-rankings" id="Grootste-daler">
+    <ul class="golfer-ranking">
+      <li>
+        <a href="#Grootste-daler" class="selected">Grootste daler</a>
+      </li>
 
+      <li>
+        <a href="#Meeste-rondes">Meeste rondes</a>
+      </li>
 
+      <li>
+        <a href="#Laagste-hcp">Laagste hcp</a>
+      </li>
+    </ul>
+
+    <ol class="golfer-ranking">
+      {% for golfer in golfers limit: 5 %}
+        <li>
+          <section>
+            <h3>{{ golfer.name }}</h3>
+            <p>WHS</p>
+          </section>
+          <section>
+            <p class="handicap">{{ golfer.improvement | round: 1 }}</p>
+          </section>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="component maand-rankings" id="Meeste-rondes">
+    <ul class="golfer-ranking">
+      <li>
+        <a href="#Grootste-daler">Grootste daler</a>
+      </li>
+
+      <li>
+        <a href="#Meeste-rondes" class="selected">Meeste rondes</a>
+      </li>
+
+      <li>
+        <a href="#Laagste-hcp">Laagste hcp</a>
+      </li>
+    </ul>
+
+    <ol class="golfer-ranking">
+      {% for golfer in golfers limit: 5 %}
+        <li>
+          <section>
+            <h3>{{ golfer.name }}</h3>
+            <p></p>
+          </section>
+          <section>
+            <p class="verschil">{{ golfer.handicap | round: 1 }}</p>
+          </section>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="component maand-rankings" id="Laagste-hcp">
+    <ul class="golfer-ranking">
+      <li>
+        <a href="#Grootste-daler">Grootste daler</a>
+      </li>
+
+      <li>
+        <a href="#Meeste-rondes">Meeste rondes</a>
+      </li>
+
+      <li>
+        <a href="#Laagste-hcp" class="selected">Laagste hcp</a>
+      </li>
+    </ul>
+
+    <ol class="golfer-ranking">
+      {% for golfer in golfers limit: 5 %}
+        {% assign golfer_rondes = rondes | where: 'golfer_id', golfer.id %}
+        {% assign ronde = golfer_rondes | last %}
+
+        <li>
+          <section>
+            <h3>{{ golfer.name }}</h3>
+            <p>{{ ronde.type }}</p>
+          </section>
+          <section>
+            <p class="meeste-rondes">{{ ronde.differential | round: 1 }}</p>
+          </section>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+</section>
 
 <section class="heading">
-<p class="title-small">vrienden</p>
-<h2>Maand-rankings</h2>
+  <p class="title-small">DOEL</p>
+  <h2>Naar je volgende handicap</h2>
 </section>
 
-<section class="component" id="Grootste-daler">
-
-<ul class="golfer-ranking">
-<li><a href="#Grootste-daler" class="active">Grootste daler</a>
-
-<li><a href="#Meeste-rondes">Meeste rondes</a>
-
-<li><a href="#Laagste-hcp">Laagste hcp</a>
-</ul>
-
-
-
-<ol class="golfer-ranking">
-{% for golfer in golfers limit:5 %}
-
-    <li>
-    <section>
-        <h4>{{ golfer.name }}</h4>
-        <p>WHS</p> 
-
-    </section>
-    <section>
-        <p class="handicap">{{ golfer.improvement | round: 1 }}</p>
-    </section>
-    </li>
-{% endfor %}
-
-</ol>
+<section class="component">
+  <input type="number" value="10" min="1" max="54" step="0.1">
 </section>
 
-<section class="component" id="Meeste-rondes">
-<ul class="golfer-ranking">
-<li><a href="#Grootste-daler">Grootste daler</a>
+{% comment %}
+  <form action="/jouw-suggestie" method="POST" class="form">
+      <label for="plant">Welke plant zou jij willen zien in de tuin?</label>
+      <input id="plant" name="suggestion" type="text" placeholder="plant..." alt="suggestie textveld" required>
 
-<li><a href="#Meeste-rondes" class="active">Meeste rondes</a>
+      <label for="reden">Waarom zou je dit willen zien?</label>
+      <input id="reden" name="suggestion_reason" type="text" placeholder="waarom?..." alt="reden textveld" required>
 
-<li><a href="#Laagste-hcp">Laagste hcp</a>
-</ul>
-
-
-<ol class="golfer-ranking">
-{% for golfer in golfers limit:5 %}
-
-    <li>
-    <section>
-        <h4>{{ golfer.name }}</h4>
-        <p></p> 
-    </section>
-    <section>
-        <p class="verschil">{{ golfer.handicap | round: 1 }}</p>
-    </section>
-    </li>
-{% endfor %}
-
-</ol>
-</section>
-
-<section class="component" id="Laagste-hcp">
-<ul class="golfer-ranking">
-<li><a href="#Grootste-daler">Grootste daler</a>
-
-<li><a href="#Meeste-rondes">Meeste rondes</a>
-
-<li><a href="#Laagste-hcp" class="active">Laagste hcp</a>
-</ul>
-
-<ol class="golfer-ranking">
-{% for golfer in golfers limit:5 %}
-
-{% assign golfer_rondes = rondes | where: "golfer_id", golfer.id %}
-{% assign ronde = golfer_rondes | last %}
-
-    <li>
-    <section>
-        <h4>{{ golfer.name }}</h4>
-        <p>{{ ronde.type }}</p> 
-    </section>
-    <section>
-        <p class="meeste-rondes">{{ ronde.differential | round: 1 }}</p>
-    </section>
-    </li>
-{% endfor %}
-
-</ol>
-</section>
+      <input class="button verstuur" type="submit" value="verstuur" alt="verstuurknop">
+  </form>
+{% endcomment %}
 
 <section class="heading">
-<p class="title-small">DOEL</p>
-<h2>Naar je volgende handicap</h2>
+  <p class="title-small">LOG</p>
+  <h2>Recente rondes</h2>
 </section>
 <section class="component">
+  <form>
+    {% comment %} <label></label> {% endcomment %}
 
-<input type="number" value="10" min="1" max="54" step="0.1">
-
+    <input class="" type="submit" value="verstuur" alt="">
+  </form>
 </section>
 
-</section>
 {% render 'partials/foot.liquid' %}

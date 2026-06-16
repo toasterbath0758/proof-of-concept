@@ -47,9 +47,8 @@ section.heading {
 }
 
 section.component {
-    margin: 0 1em 0 1em;
-    margin-top: 1em;
-    padding: 1em;
+    margin: 1em;
+    padding: 0 1em 0 1em;
     border-radius: 1em;
     background: var(--color-2);
     box-shadow: 0px -1px 5px grey;
@@ -67,18 +66,22 @@ section.component {
     }
 }
 
+/* start golfer rankings styling*/
+
+/* dit is de code om de tabjes te laten werken */
+
 .maand-rankings {
-    display: none;
-    position: absolute;
-    z-index: 2;
+    padding: 1em;
+}
+
+section.active {
+    display: block;
 }
 
 section:target {
     display: block;
-    z-index: 0;
-
 }
-
+/* end tabjes */
 
 section.maandranking-wrapper {
     padding-bottom: 30em;
@@ -98,14 +101,17 @@ p.title-small {
     font-size: var(--title-small);
 }
 
-ol.golfer-ranking {
-    /* padding-left: 1em; */
 
-    li {
-        padding: 0.5em 1em 0.5em 1em;
-        border-bottom: 0.1em solid;
-        display: flex;
-        justify-content: space-between;
+/* ?????????????????????????? */
+
+table.golfer-ranking {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        height: 3.5em;
+        text-align: left;
+        border-bottom: 1px solid black;
     }
 }
 

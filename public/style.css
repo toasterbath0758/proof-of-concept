@@ -119,12 +119,14 @@ ul.golfer-ranking {
     }
 }
 
-/* .invis-tab {
-    display: none;
-} */
 
+/* activeGolfer class */
 
+tr.activeGolfer {
+    background: green;
+}
 
+/* einde golfer rankings styling */
 
 
 /* section.pntn-teller {

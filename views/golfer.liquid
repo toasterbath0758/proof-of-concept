@@ -1,3 +1,29 @@
+    <section class="component maand-rankings">
+      <table class="golfer-ranking">
+        <thead>
+          <tr>
+            <th>golfer</th>
+            <th>handicap</th>
+            <th>meeste rondes</th>
+            <th>verschil</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for golfer in golfers limit: 5 %}
+            {% assign golfer_rondes = rondes | where: 'golfer_id', golfer.id %}
+            {% assign ronde = golfer_rondes | last %}
+
+            <tr>
+              <td>{{ golfer.name }}</td>
+              <td>{{ golfer.improvement | round: 1 }}</td>
+              <td>{{ ronde.differential | round: 1 }}</td>
+              <td>{{ golfer.handicap | round: 1 }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </section>
   <section class="heading">
     <p class="title-small">LOG</p>
     <h2>Recente rondes</h2>

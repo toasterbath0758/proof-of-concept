@@ -198,4 +198,39 @@
   </section>
 </section>
 
+
+<section class="component">
+
+<button class="btn-ronde" id="open-form">+ Ronde</button>
+<form id="ronde-form" action="/golfer/{{ golfer.id }}/score" method="POST">
+    <!--<div class="fallback-form">-->
+        <label for="date">
+            Datum
+            <input type="date" id="date" name="date" required>
+        </label>
+
+        <label for="course">
+            Baan
+            <input type="text" id="course" name="course" required>
+        </label>
+
+        <label for="differential">
+            HCP
+            <input type="number" id="differential" name="differential" step="0.1" required>
+        </label>
+
+        <label for="type">
+            <input type="checkbox" id="type" name="type" value="QUAL">
+            Telt mee voor handicap (QUAL)
+        </label>
+
+        <section>
+            <a href="/golfer/{{ golfer.id }}" class="btn-annuleer">Annuleren</a>
+            <button type="submit">Ronde opslaan</button>
+        </section>
+    <!--</div>-->
+    <!--</div>-->
+</form>
+</section>
+
 {% render 'partials/foot.liquid' %}

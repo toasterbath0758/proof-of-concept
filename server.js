@@ -203,29 +203,26 @@ app.get("/golfer/:id", async function (request, response) {
 // POST + DELETE GEDEELTE
 
 // POST RECENTE RONDES
-app.post('/golfer/:id/score', async function (req, res){
-  const id = req.params.id
-
+app.post("/golfer/:id/score", async function (req, res) {
+  const id = req.params.id;
 
   try {
-    await fetch('https://fdnd-agency.directus.app/items/into_golf_rounds', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+    await fetch("https://fdnd-agency.directus.app/items/into_golf_rounds", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         golfer_id: id,
         date: req.body.date,
         course: req.body.course,
         differential: req.body.differential,
-        type: req.body.type
-      })
-    })
-    res.redirect(303, `/golfer/${id}?status=success`)
+        type: req.body.type,
+      }),
+    });
+    res.redirect(303, `/golfer/${id}?status=success`);
   } catch (error) {
-    res.redirect(303, `/golfer/${id}?status=error`)
+    res.redirect(303, `/golfer/${id}?status=error`);
   }
-})
-
-
+});
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000, als dit ergens gehost wordt, is het waarschijnlijk poort 80

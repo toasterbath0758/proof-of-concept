@@ -46,13 +46,13 @@ De technieken die ik heb gebruikt:
 * progressive enhancement
 * een POST function WIP
 * een DELETE function WIP
-* ik heb round 1 gebruikt in de liquid filters (truncate is als je een text wil afkappen met 3 puntjes aan het einde).
+* ik heb round 1 gebruikt in de liquid filters (round is als je achter de comma cijfers wil afkappen).
 /////////////////////////////////
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
 1. Clone als eerst deze repository
 2. Open hem in VSCodium of een code editor
-3. Open dan de terminal (ctrl + j op windows) en type npm install
+3. Open dan de terminal (ctrl + j op windows en daarna ctrl + c) en type npm install
 4. Start vervolgens de website door npm start in te typen
 
 ## Bronnen

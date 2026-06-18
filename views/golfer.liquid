@@ -5,109 +5,84 @@
 
 <section class="maandranking-wrapper">
   <section class="heading">
-    <p class="title-small">vrienden</p>
-    <h3>Maand-rankings</h3>
-    {% comment %}
       </section>
 
-      <section class="component maand-rankings" id="Grootste-daler">
-        <ul class="golfer-ranking">
-          <li>
-            <a href="#Grootste-daler" class="selected">Grootste daler</a>
-          </li>
+    <section class="component maand-rankings" id="Grootste-daler">
+        <table class="golfer-ranking">
+            <thead>
+                <tr>
+                    <th><a href="#Grootste-daler" class="selected">Grootste daler</a></th>
+                    <th><a href="#Meeste-rondes">Meeste rondes</a></th>
+                    <th><a href="#Laagste-hcp">Laagste hcp</a></th>
+                </tr>
+            </thead>
+            <tbody class="golfer-ranking">
+        {% for golfer in golfers limit: 5 %}
+        {% if golfer.id == activeGolfer %}
+        <tr class="activeGolfer">
+        {% else %}
+        <tr>
+        {% endif %}
+                    <th><p>{{ golfer.name }}</p><p>WHS</p></th>
+                    <th><p class="handicap">{{ golfer.improvement | round: 1 }}</p></th>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </section>
 
-          <li>
-            <a href="#Meeste-rondes">Meeste rondes</a>
-          </li>
-
-          <li>
-            <a href="#Laagste-hcp">Laagste hcp</a>
-          </li>
-        </ul>
-
-        <ol class="golfer-ranking">
-          {% for golfer in golfers limit: 5 %}
-            <li>
-              <section>
-                <h3>{{ golfer.name }}</h3>
-                <p>WHS</p>
-              </section>
-              <section>
-                <p class="handicap">{{ golfer.improvement | round: 1 }}</p>
-              </section>
-            </li>
-          {% endfor %}
-        </ol>
-      </section>
 
       <section class="component maand-rankings" id="Meeste-rondes">
-        <ul class="golfer-ranking">
-          <li>
-            <a href="#Grootste-daler">Grootste daler</a>
-          </li>
-
-          <li>
-            <a href="#Meeste-rondes" class="selected">Meeste rondes</a>
-          </li>
-
-          <li>
-            <a href="#Laagste-hcp">Laagste hcp</a>
-          </li>
-        </ul>
-
-        <ol class="golfer-ranking">
-          {% for golfer in golfers limit: 5 %}
-            {% if golfer.id == activeGolfer %}
-
-            <li class="activeGolfer">
-            {% else %}
-                <li>
+        <table class="golfer-ranking">
+            <thead>
+            <tr>
+                <th><a href="#Grootste-daler">Grootste daler</a></th>
+                <th><a href="#Meeste-rondes" class="selected">Meeste rondes</a></th>
+                <th><a href="#Laagste-hcp">Laagste hcp</a></th>
+            </tr>
+            </thead>
+            <tbody class="golfer-ranking">
+                {% for golfer in golfers limit: 5 %}
+                {% if golfer.id == activeGolfer %}
+                <tr class="activeGolfer">
+                {% else %}
+                <tr>
                 {% endif %}
-              <section>
-                <h3>{{ golfer.name }}</h3>
-                <p></p>
-              </section>
-              <section>
-                <p class="verschil">{{ golfer.handicap | round: 1 }}</p>
-              </section>
-            </li>
+                    <th><p>{{ golfer.name }}</p></th>
+                    <th><p class="verschil">{{ golfer.handicap | round: 1 }}</p></th>
+                </tr>
           {% endfor %}
-        </ol>
-      </section>
+        </table>
+    </section>
 
-      <section class="component maand-rankings" id="Laagste-hcp">
-        <ul class="golfer-ranking">
-          <li>
-            <a href="#Grootste-daler">Grootste daler</a>
-          </li>
-
-          <li>
-            <a href="#Meeste-rondes">Meeste rondes</a>
-          </li>
-
-          <li>
-            <a href="#Laagste-hcp" class="selected">Laagste hcp</a>
-          </li>
-        </ul>
-
-        <ol class="golfer-ranking">
-          {% for golfer in golfers limit: 5 %}
+    <section class="component maand-rankings" id="Laagste-hcp">
+        <table class="golfer-ranking">
+            <thead>
+                <tr>
+                    <th><a href="#Grootste-daler">Grootste daler</a></th>
+                    <th><a href="#Meeste-rondes">Meeste rondes</a></th>
+                    <th><a href="#Laagste-hcp" class="selected">Laagste hcp</a></th>
+                </tr>
+            </thead>
+            <tbody class="golfer-ranking">
+            {% for golfer in golfers limit: 5 %}
             {% assign golfer_rondes = rondes | where: 'golfer_id', golfer.id %}
             {% assign ronde = golfer_rondes | last %}
 
-            <li>
-              <section>
-                <h3>{{ golfer.name }}</h3>
-                <p>{{ ronde.type }}</p>
-              </section>
-              <section>
-                <p class="meeste-rondes">{{ ronde.differential | round: 1 }}</p>
-              </section>
-            </li>
+            {% if golfer.id == activeGolfer %}
+            <tr class="activeGolfer">
+            {% else %}
+            <tr>
+            {% endif %}
+                <th><p>{{ golfer.name }}</p></th>
+                <th><p>{{ ronde.type }}</p></th>
+
+                <th><p class="meeste-rondes">{{ ronde.differential | round: 1 }}</p></th>
+            </tr>
           {% endfor %}
-        </ol>
-      </section>
-    {% endcomment %}
+        </tbody>
+      </table>
+    </section>
 
     <section class="component maand-rankings">
       <table class="golfer-ranking">

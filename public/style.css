@@ -132,11 +132,41 @@ ul.golfer-ranking {
 
 /* activeGolfer class */
 
-tr.activeGolfer {
-    background: green;
-}
+            th {
+                text-align: left;
+            }
 
-/* einde golfer rankings styling */
+            th:first-of-type {
+                padding-left: 1rem;
+            }
+
+            td {
+                text-align: left;
+            }
+
+            td:first-of-type {
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    a.selected {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
+
+    /* activeGolfer class */
+    tr.activeGolfer {
+        background: var(--color-4);
+        color: var(--color-2);
+        font-weight: bold;
+    }
+
+    /* activeSort class */
+    .activeSort {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
 
 
 /* section.pntn-teller {

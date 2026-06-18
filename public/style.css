@@ -53,8 +53,12 @@ main {
         width: 300px;
     }
 
-    @media (min-width: 600px) {
-        width: 500px;
+    header {
+        padding: 2em;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        position: sticky;
     }
 
     h1 {

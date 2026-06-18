@@ -49,8 +49,10 @@ main {
         font-size: var(--font-size-s);
     }
 
-    @media (min-width: 375px) {
-        width: 300px;
+    form {
+        input {
+            outline: 1px solid var(--color-1);
+        }
     }
 
     header {
@@ -64,7 +66,6 @@ main {
     h1 {
         font-size: 1.5em;
     }
-}
 
     section.heading {
         /*padding: 1em 0 1em 1em;*/
@@ -208,8 +209,9 @@ main {
         text-underline-offset: 10px;
     }
 
+    /* einde golfer rankings styling */
 
-/* section.pntn-teller {
+    /* section.pntn-teller {
     display: flex;
     justify-content: center;
     gap: 1em;

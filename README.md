@@ -23,7 +23,9 @@ hier kan je een suggestie achterlaten, je voert in wat je favoriete plant is en 
 
 ## functionaliteit
 de sort en filter functie:
-https://github.com/user-attachments/assets/99e8c32b-0143-44d7-acce-8960a89bb6ee
+https://github.com/user-attachments/assets/e15f5436-826d-4e76-b838-9c03f2e6da13
+
+
 
 
 ## Gebruik

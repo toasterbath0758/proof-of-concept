@@ -27,35 +27,27 @@ body {
 main {
     background: var(--color-3);
     width: 100vw;
+    min-width: 380px;
     padding-top: 5em;
 
     display: grid;
     justify-content: center;
-}
 
-header {
-    padding: 2em;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    position: sticky;
-}
+    h1 {
+        font-size: var(--font-size-xl);
+    }
 
-h1 {
-    font-size: 1.5em;
-}
+    h2 {
+        font-size: var(--font-size-l);
+    }
 
-section.heading {
-    padding: 1em 0 1em 1em;
-    height: fit-content;
-}
+    h3 {
+        font-size: var(--font-size-m);
+    }
 
-section.component {
-    margin: 1em;
-    padding: 0 1em 0 1em;
-    border-radius: 1em;
-    background: var(--color-2);
-    box-shadow: 0px -1px 5px grey;
+    p {
+        font-size: var(--font-size-s);
+    }
 
     @media (min-width: 375px) {
         width: 300px;
@@ -65,45 +57,50 @@ section.component {
         width: 500px;
     }
 
-    @media (min-width: 800px) {
-        width: 700px;
+    h1 {
+        font-size: 1.5em;
     }
 }
 
-/* start golfer rankings styling*/
+    section.heading {
+        /*padding: 1em 0 1em 1em;*/
+        height: fit-content;
+    }
 
-/* dit is de code om de tabjes te laten werken */
+    section.component {
+        margin: 1em;
+        /*padding: 0 1em 0 1em;*/
+        background: var(--color-2);
+        box-shadow: 0px -1px 5px grey;
 
-.maand-rankings {
-    padding: 1em;
-}
+        @media (min-width: 375px) {
+            width: 350px;
 
-section.active {
-    display: block;
-}
+            table {
+                a {
+                    padding: 0 0.5em 0 0.5em;
+                }
+            }
+        }
 
-section:target {
-    display: block;
-}
-/* end tabjes */
+        @media (min-width: 600px) {
+            width: 500px;
+        }
 
-section.maandranking-wrapper {
-    padding-bottom: 30em;
-}
+        @media (min-width: 800px) {
+            width: 700px;
+        }
+    }
 
-a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-1);
-}
+    /* start golfer rankings styling*/
 
-a.selected {
-    text-decoration: underline;
-}
+    /* dit is de code om de tabjes te laten werken */
 
-p.title-small {
-    font-size: var(--title-small);
-}
+    /*ol.golfer-ranking {
+        justify-content: space-evenly;
+        padding: 0 0 1em 0;
+        flex-direction: column;
+        gap: 1em;
 
 
 /* ?????????????????????????? */

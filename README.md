@@ -22,12 +22,8 @@ hier kan je een suggestie achterlaten, je voert in wat je favoriete plant is en 
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
 ## functionaliteit
-de POST functie:
-https://github.com/user-attachments/assets/5fe74059-c901-471f-b16e-198ccf1d8560
-
-de DELETE functie
-https://github.com/user-attachments/assets/87129e84-5f59-4992-bd07-619d17456b59
-#proof-of-concept
+de sort en filter functie:
+https://github.com/user-attachments/assets/99e8c32b-0143-44d7-acce-8960a89bb6ee
 
 
 ## Gebruik
@@ -35,14 +31,14 @@ https://github.com/user-attachments/assets/87129e84-5f59-4992-bd07-619d17456b59
 Op de app kan je: 
 * naar de maandrankings kijken van jouw golfclub,
   filteren en sorteren op handicap, meeste rondes en verschil van handicap sinds laatste keer spelen
-* 
-
 
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 ik heb de styling vande site afgeleid van het bestaande prototype.
 je kan filteren en sorteren op handicap wie de meeste rondes heeft gespeeld en verbetering sinds de laatste keer dat je hebt gespeeld.
+
+
 
 De technieken die ik heb gebruikt:
 * progressive enhancement

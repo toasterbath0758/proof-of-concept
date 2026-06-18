@@ -106,32 +106,71 @@ main {
         flex-direction: column;
         gap: 1em;
 
+        li {
+            display: flex;
+            list-style: none;
+            gap: 1em;
+        }
+    }*/
 
-/* ?????????????????????????? */
+    section.active {
+        display: block;
+    }
 
-table.golfer-ranking {
-    width: 100%;
-    border-collapse: collapse;
+    section:target {
+        display: block;
+    }
+    /* end tabjes */
 
-    tr {
-        height: 3.5em;
-        text-align: left;
-        border-bottom: 1px solid black;
+    /*wrapper van het component + de title erboven*/
+    /*section.maandranking-wrapper {
+    }*/
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--color-1);
     }
 }
 
-ul.golfer-ranking {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0 0 1em 0;
+    table.golfer-ranking {
+        width: 100%;
+        border-collapse: collapse;
 
-    li {
-        list-style: none;
+        tr {
+            height: 3.5em;
+            text-align: left;
+            border-bottom: 1px solid black;
+
+            th {
+                text-align: center;
+            }
+
+            th:first-of-type {
+                padding-left: 1rem;
+                text-align: left;
+            }
+
+            td {
+                text-align: center;
+            }
+
+            td:first-of-type {
+                padding-left: 1rem;
+                text-align: left;
+            }
+        }
     }
 }
 
+    table.golfer-rondes {
+        width: 100%;
+        border-collapse: collapse;
 
-/* activeGolfer class */
+        tr {
+            height: 3.5em;
+            text-align: left;
+            border-bottom: 1px solid black;
 
             th {
                 text-align: left;

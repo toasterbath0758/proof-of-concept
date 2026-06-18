@@ -132,7 +132,6 @@ main {
         font-weight: bold;
         color: var(--color-1);
     }
-}
 
     table.golfer-ranking {
         width: 100%;
@@ -162,7 +161,6 @@ main {
             }
         }
     }
-}
 
     table.golfer-rondes {
         width: 100%;

@@ -1,7 +1,7 @@
 {% render 'partials/head.liquid' %}
 
 <p class="title-small">VRIENDEN</p>
-<h2>Maandranking - april</h2>
+<h2>Maandranking - juni</h2>
 
 <section class="maandranking-wrapper">
   <section class="heading">
@@ -84,26 +84,29 @@
       </table>
     </section>
 
-    <section class="component maand-rankings">
+<!--???????????????????????????-->
+    <section class="component">
       <table class="golfer-ranking">
         <thead>
           <tr>
-            <th>golfer</th>
-            <th>handicap</th>
-            <th>meeste rondes</th>
-            <th>verschil</th>
+            <th><a href="?sort=name" {% if activeSort == 'name' %}class="activeSort"{%  endif %}>golfer</a></th>
+            <th><a href="?sort=handicap" {% if activeSort == 'handicap' %}class="activeSort"{%  endif %}>handicap</a></th>
+            <th><a href="?sort=aantalRondes" {% if activeSort == 'aantalRondes' %}class="activeSort"{%  endif %}>meeste rondes</a></th>
+            <th><a href="?sort=improvement" {% if activeSort == 'improvement' %}class="activeSort"{%  endif %}>verschil</a></th>
           </tr>
         </thead>
         <tbody>
           {% for golfer in golfers limit: 5 %}
-            {% assign golfer_rondes = rondes | where: 'golfer_id', golfer.id %}
-            {% assign ronde = golfer_rondes | last %}
 
+            {% if golfer.id == activeGolfer %}
+            <tr class="activeGolfer">
+              {% else %}
             <tr>
+              {% endif %}
               <td>{{ golfer.name }}</td>
-              <td>{{ golfer.improvement | round: 1 }}</td>
-              <td>{{ ronde.differential | round: 1 }}</td>
               <td>{{ golfer.handicap | round: 1 }}</td>
+              <td>{{ golfer.aantalRondes }}</td>
+              <td>{{ golfer.improvement | round: 1 }}</td>
             </tr>
           {% endfor %}
         </tbody>
@@ -122,10 +125,11 @@
     </section>
   {% endcomment %}
 
-  <section class="heading">
-    <p class="title-small">LOG</p>
+ <section class="heading">
+    <p>LOG</p>
     <h2>Recente rondes</h2>
   </section>
+
   <section class="component">
     <table class="golfer-rondes">
       <thead>

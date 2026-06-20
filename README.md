@@ -37,6 +37,11 @@ Op de app kan je:
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+ik heb er voor gezorgd dat het duidelijk is wie je bent op de maandrankings, dit doeik door een activeGolfer class toe te voegen via ID
+dit is zodat de UX fijner is! ook kan je zien op welke sorteer het staat namelijk staat er een underline met offset onder de geselecteerde tab-optie zie hier: 
+
+<img width="718" height="355" alt="image" src="https://github.com/user-attachments/assets/96d0faa6-2db2-470b-875d-2e3a1796af9c" />
+
 ik heb de styling vande site afgeleid van het bestaande prototype.
 je kan filteren en sorteren op handicap wie de meeste rondes heeft gespeeld en verbetering sinds de laatste keer dat je hebt gespeeld.
 
